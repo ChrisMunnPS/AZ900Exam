@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AZ-900 cheat sheets - print pack</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #eef2f7;
+    color: #14181f;
+    font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  }
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 18px;
+    background: #fff;
+    border-bottom: 1px solid #d8dee9;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  .toolbar strong { font-size: .95rem; }
+  .toolbar span { font-size: .76rem; color: #4b5563; }
+  .toolbar button {
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    font: inherit;
+    font-size: .84rem;
+    font-weight: 650;
+    cursor: pointer;
+  }
+  .toolbar button:hover { background: #1d4ed8; }
+  .pack { padding: 18px; display: grid; gap: 18px; justify-content: center; }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 8mm;
+    background: #fff;
+    box-shadow: 0 10px 30px -18px rgba(16, 24, 40, .55);
+    border: 1px solid #e2e8f0;
+    font-size: 7.4pt;
+    line-height: 1.13;
+    column-count: 2;
+    column-gap: 6mm;
+    column-fill: auto;
+  }
+  h1 {
+    margin: 0 0 1.5mm;
+    padding-bottom: 1mm;
+    border-bottom: 1.4pt solid #2563eb;
+    font-size: 1.85em;
+    line-height: 1.12;
+    letter-spacing: -.01em;
+    column-span: all;
+  }
+  h2 {
+    margin: 0 0 .4mm;
+    padding: .8mm 0 .5mm;
+    border-bottom: .7pt solid #cbd5e1;
+    font-size: 1.3em;
+    line-height: 1.15;
+    color: #1d4ed8;
+    break-after: avoid;
+  }
+  p { margin: 0 0 1.2mm; }
+  p.note {
+    margin: 1mm 0 1.5mm;
+    font-size: .93em;
+    color: #4b5563;
+  }
+  code {
+    font-family: "Cascadia Mono", Consolas, monospace;
+    font-size: .92em;
+    background: #eef2f9;
+    padding: 0 .5mm;
+    border-radius: 1mm;
+  }
+  table {
+    width: 100%;
+    margin: 0 0 1.1mm;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  thead { display: table-header-group; }
+  th {
+    padding: .6mm .95mm;
+    background: #e8eefb;
+    border: .5pt solid #c7d2e5;
+    font-size: .94em;
+    font-weight: 700;
+    letter-spacing: .03em;
+    text-align: left;
+    text-transform: uppercase;
+    color: #1e3a8a;
+  }
+  td {
+    padding: .5mm .9mm;
+    border: .5pt solid #d7deea;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+  }
+  td:first-child { width: 27%; font-weight: 600; color: #0f172a; }
+  tr { break-inside: avoid; }
+  ul { margin: 0 0 1.2mm; padding-left: 3.4mm; }
+  li { margin: 0 0 .4mm; }
+  footer {
+    column-span: all;
+    margin-top: 1.2mm;
+    padding-top: .8mm;
+    border-top: .5pt solid #cbd5e1;
+    font-size: .87em;
+    color: #6b7280;
+  }
+  @media print {
+    body { background: #fff; }
+    .toolbar { display: none; }
+    .pack { display: block; padding: 0; }
+    .sheet {
+      width: auto;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      box-shadow: none;
+      break-after: page;
+    }
+    .sheet:last-of-type { break-after: auto; }
+    @page { size: A4 portrait; margin: 8mm; }
+  }
+</style>
+</head>
+<body>
+<header class="toolbar">
+  <div><strong>AZ-900 cheat sheets</strong> &middot; <span>three domains, one A4 page each</span></div>
+  <button type="button" onclick="window.print()">Print all three sheets</button>
+</header>
+<main class="pack">
+
+<article class="sheet" id="sheet-1" aria-label="Describe cloud concepts">
+<h1>AZ-900 cheat sheet 1/3 &mdash; Describe cloud concepts</h1>
+<p class="note"><em>One page. Facts snapshot 2026-11; verify current behaviour on Microsoft Learn before the exam.</em></p>
+<h2>What cloud computing is</h2>
+<table><thead><tr><th>Item</th><th>What to remember</th></tr></thead><tbody>
+<tr><td>Definition</td><td>Delivery of computing services over the internet, usually with consumption-based pricing.</td></tr>
+<tr><td>Provider duties</td><td>Physical datacenters, hosts, storage hardware, and the global network.</td></tr>
+<tr><td>Customer duties</td><td>Data, identities, access, and the configuration of whatever the service exposes.</td></tr>
+<tr><td>Consumption model</td><td>Pay for what you use; release the resource and the meter stops. No upfront hardware.</td></tr>
+<tr><td>CapEx vs OpEx</td><td>Buying servers is capital expenditure; cloud usage is operating expenditure.</td></tr>
+<tr><td>Economies of scale</td><td>Providers buy and operate at massive scale, lowering the cost per unit.</td></tr>
+</tbody></table>
+<h2>Deployment models</h2>
+<table><thead><tr><th>Model</th><th>What it means</th></tr></thead><tbody>
+<tr><td><strong>Public</strong></td><td>Provider-owned, multi-tenant, delivered over the internet. Azure, Microsoft 365.</td></tr>
+<tr><td><strong>Private</strong></td><td>Cloud-style pooling dedicated to one organisation, on site or hosted.</td></tr>
+<tr><td><strong>Hybrid</strong></td><td>Private or on-premises connected to public cloud for regulatory, latency, or legacy needs.</td></tr>
+<tr><td><strong>Multi-cloud</strong></td><td>Services from more than one public provider; reduces lock-in.</td></tr>
+<tr><td><strong>Sovereign</strong></td><td>Isolated Azure instance for legal or compliance reasons (US Government, China).</td></tr>
+</tbody></table>
+<h2>Service models</h2>
+<table><thead><tr><th>Model</th><th>You manage / Microsoft manages</th></tr></thead><tbody>
+<tr><td><strong>IaaS</strong></td><td>You: OS, runtime, apps, data. Microsoft: hosts, storage, virtualization. Example: Virtual Machines.</td></tr>
+<tr><td><strong>PaaS</strong></td><td>You: code and data. Microsoft: OS, runtime, scaling, patching. Example: App Service, Azure SQL.</td></tr>
+<tr><td><strong>SaaS</strong></td><td>You: users, data, settings. Microsoft: the entire application. Example: Microsoft 365.</td></tr>
+</tbody></table>
+<p>If you patch the guest OS you are in <strong>IaaS</strong>; if you only bring code you are in <strong>PaaS</strong>; if you only configure a finished product you are in <strong>SaaS</strong>.</p>
+<h2>Shared responsibility</h2>
+<table><thead><tr><th>Layer</th><th>IaaS</th><th>PaaS</th><th>SaaS</th></tr></thead><tbody>
+<tr><td>Physical datacenter, hosts, network</td><td>Microsoft</td><td>Microsoft</td><td>Microsoft</td></tr>
+<tr><td>Hypervisor and host OS</td><td>Microsoft</td><td>Microsoft</td><td>Microsoft</td></tr>
+<tr><td>Guest OS and runtime</td><td><strong>Customer</strong></td><td>Microsoft</td><td>Microsoft</td></tr>
+<tr><td>Application code</td><td><strong>Customer</strong></td><td><strong>Customer</strong></td><td>Microsoft</td></tr>
+<tr><td>Data, identities, access</td><td><strong>Customer</strong></td><td><strong>Customer</strong></td><td><strong>Customer</strong></td></tr>
+<tr><td>Device and account hygiene</td><td><strong>Customer</strong></td><td><strong>Customer</strong></td><td><strong>Customer</strong></td></tr>
+</tbody></table>
+<p><strong>Always customer:</strong> data, accounts, permissions, and configuration. <strong>Always Microsoft:</strong> the physical and virtualization layer.</p>
+<h2>Benefits and characteristics</h2>
+<table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody>
+<tr><td><strong>High availability</strong></td><td>Minimal downtime through redundancy, health probes, and fast failover.</td></tr>
+<tr><td><strong>Reliability</strong></td><td>Keeps working correctly and recovers from failures.</td></tr>
+<tr><td><strong>Scalability</strong></td><td>Add or remove capacity: scale up (bigger) or scale out (more instances).</td></tr>
+<tr><td><strong>Elasticity</strong></td><td>Automatic scaling that matches capacity to demand.</td></tr>
+<tr><td><strong>Predictability</strong></td><td>Consistent performance and a forecastable cost.</td></tr>
+<tr><td><strong>Agility</strong></td><td>Provision, change, and tear down resources in minutes.</td></tr>
+<tr><td><strong>Geo-distribution</strong></td><td>Deploy to multiple regions to reduce latency for users.</td></tr>
+<tr><td><strong>Disaster recovery</strong></td><td>Restore service and data after a major event; measured by RTO and RPO.</td></tr>
+<tr><td><strong>Manageability</strong></td><td>Manage through portal, CLI, PowerShell, APIs, and templates.</td></tr>
+<tr><td><strong>Security &amp; governance</strong></td><td>Central policy, identity, and compliance over certified infrastructure.</td></tr>
+</tbody></table>
+<h2>Resilience vocabulary</h2>
+<table><thead><tr><th>Term</th><th>Plain meaning</th></tr></thead><tbody>
+<tr><td><strong>RTO</strong></td><td>Recovery time objective &mdash; how long the service may be down.</td></tr>
+<tr><td><strong>RPO</strong></td><td>Recovery point objective &mdash; how much data loss is acceptable.</td></tr>
+<tr><td><strong>Fault tolerance</strong></td><td>The system keeps running when a component fails.</td></tr>
+<tr><td><strong>Serverless</strong></td><td>Run code on demand without provisioning servers; pay per execution.</td></tr>
+</tbody></table>
+<h2>Quick decision table</h2>
+<table><thead><tr><th>Requirement</th><th>Choose</th></tr></thead><tbody>
+<tr><td>No hardware, elastic scale, no regulatory constraint</td><td>Public cloud</td></tr>
+<tr><td>Some data must stay on site by law</td><td>Hybrid or private cloud</td></tr>
+<tr><td>Avoid dependence on one provider</td><td>Multi-cloud</td></tr>
+<tr><td>Legally isolated Azure instance</td><td>Sovereign region</td></tr>
+<tr><td>Need OS control or lift and shift</td><td>IaaS</td></tr>
+<tr><td>Deploy code, no OS management</td><td>PaaS</td></tr>
+<tr><td>Finished app, configure only</td><td>SaaS</td></tr>
+<tr><td>Survive the failure of one component</td><td>High availability</td></tr>
+<tr><td>Add and remove capacity automatically</td><td>Elasticity</td></tr>
+<tr><td>Provision and tear down in minutes</td><td>Agility</td></tr>
+<tr><td>Forecast both performance and cost</td><td>Predictability</td></tr>
+<tr><td>Lowest cost per unit from provider scale</td><td>Economies of scale</td></tr>
+</tbody></table>
+<h2>Exam traps</h2>
+<ul>
+<li>Public cloud does <strong>not</strong> mean public data; it means provider-owned, shared infrastructure.</li>
+<li>Cloud removes <strong>hardware</strong> management, not your responsibility for data and access.</li>
+<li>Scalability is capability; elasticity is automation.</li>
+<li>&ldquo;Minimal changes and OS control&rdquo; points to IaaS; &ldquo;no server management&rdquo; points to PaaS or serverless.</li>
+<li>Hybrid combines private with public; multi-cloud combines public providers.</li>
+</ul>
+<footer>AZ-900 cheat sheet 1 of 3 &middot; unofficial study aid &middot; snapshot 2026-11</footer>
+</article>
+
+<article class="sheet" id="sheet-2" aria-label="Azure architecture and services">
+<h1>AZ-900 cheat sheet 2/3 &mdash; Azure architecture and services</h1>
+<p class="note"><em>One page. Facts snapshot 2026-11; verify current behaviour on Microsoft Learn before the exam.</em></p>
+<h2>Physical and management structure</h2>
+<table><thead><tr><th>Item</th><th>What to remember</th></tr></thead><tbody>
+<tr><td><strong>Region</strong></td><td>Geographic area with one or more datacenters on a low-latency network. Most resources are regional.</td></tr>
+<tr><td><strong>Availability zone</strong></td><td>Physically separate datacenter group in a region with independent power, cooling, and networking. Zone-enabled regions have <strong>at least three</strong>.</td></tr>
+<tr><td><strong>Region pair</strong></td><td>Same geography, at least <strong>300 miles</strong> apart; updates roll out one at a time; data stays in the geography (Brazil South excepted).</td></tr>
+<tr><td><strong>Sovereign region</strong></td><td>Isolated Azure instance: US Government, China via 21Vianet.</td></tr>
+<tr><td><strong>Global services</strong></td><td>Microsoft Entra ID, Azure DNS, and Traffic Manager are not tied to one region.</td></tr>
+<tr><td><strong>Resource group</strong></td><td>Flat container; a resource is in exactly one group; deleting the group deletes its contents.</td></tr>
+<tr><td><strong>Subscription</strong></td><td>Billing and access-control boundary; one tenant can have many subscriptions.</td></tr>
+<tr><td><strong>Management group</strong></td><td>Groups subscriptions for inherited policy and access; 6 levels below the root, 10,000 per directory, one parent.</td></tr>
+<tr><td><strong>Hierarchy</strong></td><td>Tenant root &rarr; management groups &rarr; subscriptions &rarr; resource groups &rarr; resources.</td></tr>
+</tbody></table>
+<h2>Compute</h2>
+<table><thead><tr><th>Service</th><th>Use it for</th></tr></thead><tbody>
+<tr><td><strong>Virtual Machines</strong></td><td>Full OS control, lift and shift, legacy apps. You patch the guest OS.</td></tr>
+<tr><td><strong>VM scale sets</strong></td><td>Identical, load-balanced VMs that scale out and in automatically.</td></tr>
+<tr><td><strong>Availability sets</strong></td><td>Spread VMs across fault domains and update domains inside one datacenter.</td></tr>
+<tr><td><strong>Container Instances</strong></td><td>Fastest way to run one container; no orchestration; per-second billing.</td></tr>
+<tr><td><strong>Kubernetes Service</strong></td><td>Orchestrate a large fleet of containers.</td></tr>
+<tr><td><strong>Azure Functions</strong></td><td>Event-driven serverless code; pay per execution; Durable Functions keep state.</td></tr>
+<tr><td><strong>App Service</strong></td><td>PaaS web apps, APIs, mobile back ends; deployment slots and autoscaling.</td></tr>
+<tr><td><strong>Virtual Desktop</strong></td><td>Managed Windows desktops and apps streamed to users.</td></tr>
+</tbody></table>
+<p><strong>VM families:</strong> B burstable &middot; D general &middot; E memory &middot; F compute &middot; M large memory &middot; L storage &middot; N GPU.</p>
+<h2>Networking</h2>
+<table><thead><tr><th>Service</th><th>What it does</th></tr></thead><tbody>
+<tr><td><strong>Virtual network</strong></td><td>Private IP networking with isolation, segmentation, and routing. Subnets divide the address space.</td></tr>
+<tr><td><strong>Network security group</strong></td><td>Allow/deny rules by priority on a subnet or NIC.</td></tr>
+<tr><td><strong>VPN Gateway</strong></td><td>Encrypted site-to-site, point-to-site, or VNet-to-VNet tunnel over the internet.</td></tr>
+<tr><td><strong>ExpressRoute</strong></td><td>Private dedicated circuit that does not traverse the public internet.</td></tr>
+<tr><td><strong>Azure DNS</strong></td><td>Public zone hosting; private zones resolve names inside VNets.</td></tr>
+<tr><td><strong>Load Balancer</strong></td><td>Layer 4 (TCP/UDP) distribution with health probes.</td></tr>
+<tr><td><strong>Application Gateway</strong></td><td>Layer 7 reverse proxy: URL path routing, TLS termination, optional WAF.</td></tr>
+<tr><td><strong>Front Door</strong></td><td>Global anycast HTTP entry: latency routing, failover, caching, edge WAF.</td></tr>
+</tbody></table>
+<h2>Storage</h2>
+<table><thead><tr><th>Service</th><th>What it holds</th></tr></thead><tbody>
+<tr><td><strong>Blob storage</strong></td><td>Unstructured objects: images, video, backups, logs. Tiers: hot, cool (30-day min), cold (90-day min), archive (180-day min, offline).</td></tr>
+<tr><td><strong>Azure Files</strong></td><td>Managed SMB and NFS file shares, mountable by Windows, Linux, and macOS.</td></tr>
+<tr><td><strong>Queue storage</strong></td><td>Messages that decouple application components.</td></tr>
+<tr><td><strong>Table storage</strong></td><td>NoSQL key-value store for structured, non-relational data.</td></tr>
+<tr><td><strong>Storage account</strong></td><td>3&ndash;24 characters, lowercase letters and numbers only, globally unique; sets region, performance, and redundancy.</td></tr>
+</tbody></table>
+<p><strong>Redundancy:</strong> LRS = 3 copies in one datacenter &middot; ZRS = 3 zones in one region &middot; GRS = LRS plus region copies &middot; RA-GRS = GRS with a readable secondary &middot; GZRS = ZRS plus region copies.</p>
+<h2>Identity and security</h2>
+<table><thead><tr><th>Item</th><th>What to remember</th></tr></thead><tbody>
+<tr><td><strong>Microsoft Entra ID</strong></td><td>Cloud identity provider for users, groups, apps, and devices.</td></tr>
+<tr><td><strong>AuthN vs AuthZ</strong></td><td>Authentication proves identity; authorization decides what is allowed.</td></tr>
+<tr><td><strong>MFA</strong></td><td>Two or more factor types: know (password), have (authenticator), are (biometrics).</td></tr>
+<tr><td><strong>Conditional Access</strong></td><td>If-then sign-in policy using user, device, location, app, and risk signals.</td></tr>
+<tr><td><strong>Single sign-on</strong></td><td>One authentication for many applications.</td></tr>
+<tr><td><strong>B2B / B2C</strong></td><td>B2B invites partners as guests; B2C serves consumers in your apps.</td></tr>
+<tr><td><strong>RBAC</strong></td><td>Role assignment at management group, subscription, resource group, or resource.</td></tr>
+</tbody></table>
+<h2>AI and IoT</h2>
+<table><thead><tr><th>Service</th><th>Use it for</th></tr></thead><tbody>
+<tr><td><strong>Azure AI services</strong></td><td>Prebuilt vision, speech, language, and document APIs &mdash; no model training.</td></tr>
+<tr><td><strong>Azure OpenAI</strong></td><td>Generative AI chat and content with Azure security and governance.</td></tr>
+<tr><td><strong>Azure Machine Learning</strong></td><td>Build, train, and manage custom models.</td></tr>
+<tr><td><strong>IoT Hub</strong></td><td>Secure bidirectional device-to-cloud and cloud-to-device messaging.</td></tr>
+<tr><td><strong>IoT Central</strong></td><td>Simplified SaaS IoT platform for solution builders.</td></tr>
+<tr><td><strong>IoT Edge</strong></td><td>Run cloud workloads close to devices.</td></tr>
+</tbody></table>
+<h2>Exam traps</h2>
+<ul>
+<li>Zones protect inside a region; region pairs protect across regions.</li>
+<li>A resource belongs to one resource group, and groups cannot be nested.</li>
+<li>Storage account names cannot contain uppercase letters, hyphens, or underscores.</li>
+<li>Load Balancer is layer 4; Application Gateway is regional layer 7; Front Door is global layer 7.</li>
+<li>Available zones do not exist in every region; the minimum is three where they do.</li>
+</ul>
+<footer>AZ-900 cheat sheet 2 of 3 &middot; unofficial study aid &middot; snapshot 2026-11</footer>
+</article>
+
+<article class="sheet" id="sheet-3" aria-label="Azure management and governance">
+<h1>AZ-900 cheat sheet 3/3 &mdash; Azure management and governance</h1>
+<p class="note"><em>One page. Facts snapshot 2026-11; verify current behaviour on Microsoft Learn before the exam.</em></p>
+<h2>Cost management</h2>
+<table><thead><tr><th>Tool</th><th>Use it for</th></tr></thead><tbody>
+<tr><td><strong>Pricing calculator</strong></td><td>Estimate the monthly cost of a planned set of Azure services.</td></tr>
+<tr><td><strong>TCO calculator</strong></td><td>Compare an existing on-premises estate with the equivalent Azure cost.</td></tr>
+<tr><td><strong>Cost analysis</strong></td><td>Review actual spend and trends by resource, group, service, or tag.</td></tr>
+<tr><td><strong>Budgets</strong></td><td>Set a spending target and alert on actual or forecast thresholds. Budgets <strong>warn</strong>; they do not block spend.</td></tr>
+<tr><td><strong>Tags</strong></td><td>Name-value metadata for cost allocation, ownership, and environment. Not inherited automatically.</td></tr>
+<tr><td><strong>Advisor</strong></td><td>Free recommendations for cost, reliability, security, performance, and operational excellence.</td></tr>
+<tr><td><strong>Reservations</strong></td><td>Commit for one or three years for a lower rate on predictable workloads.</td></tr>
+</tbody></table>
+<p><strong>Cost drivers:</strong> region, resource size, running time, storage volume and tier, transactions, and outbound (egress) data. Deallocating idle resources is the fastest saving.</p>
+<h2>Governance</h2>
+<table><thead><tr><th>Control</th><th>What it does</th></tr></thead><tbody>
+<tr><td><strong>Azure RBAC</strong></td><td>Assigns a role to a user, group, or identity at a scope; permissions inherit downward.</td></tr>
+<tr><td><strong>Owner</strong></td><td>Full access including granting access.</td></tr>
+<tr><td><strong>Contributor</strong></td><td>Create and manage resources, cannot grant access.</td></tr>
+<tr><td><strong>Reader</strong></td><td>View resources only.</td></tr>
+<tr><td><strong>User Access Admin</strong></td><td>Manage access only, not resources.</td></tr>
+<tr><td><strong>Azure Policy</strong></td><td>Enforces what resources may look like: regions, tags, SKUs. Evaluates create and update requests.</td></tr>
+<tr><td><strong>Policy effects</strong></td><td>Deny, Audit, Append, Modify, DeployIfNotExists, AuditIfNotExists, Disabled.</td></tr>
+<tr><td><strong>Locks</strong></td><td><strong>CanNotDelete</strong> blocks deletion; <strong>ReadOnly</strong> blocks changes and deletion. Apply to everyone, including Owners.</td></tr>
+<tr><td><strong>Tags</strong></td><td>Organise and report; a resource does not inherit its group's tags automatically.</td></tr>
+</tbody></table>
+<p><strong>RBAC vs Policy:</strong> RBAC controls <strong>who can do what</strong>; Policy controls <strong>what the result may look like</strong>. A policy Deny blocks even subscription Owners.</p>
+<h2>Monitoring</h2>
+<table><thead><tr><th>Tool</th><th>What it shows</th></tr></thead><tbody>
+<tr><td><strong>Azure Monitor</strong></td><td>Central platform for metrics, logs, alerts, dashboards, and workbooks.</td></tr>
+<tr><td><strong>Metrics</strong></td><td>Numeric time series, near real time; platform metrics are automatic.</td></tr>
+<tr><td><strong>Logs</strong></td><td>Detailed records in Log Analytics, queried with <strong>KQL</strong> (<code>where</code>, <code>summarize</code>, <code>project</code>, <code>bin</code>, <code>join</code>).</td></tr>
+<tr><td><strong>Activity log</strong></td><td>Control-plane audit: who created, changed, or deleted a resource.</td></tr>
+<tr><td><strong>Alert rule</strong></td><td>The condition: metric threshold, log query, or activity event.</td></tr>
+<tr><td><strong>Action group</strong></td><td>The response: email, SMS, voice, push, webhook, function, Logic App, runbook, ITSM.</td></tr>
+<tr><td><strong>Application Insights</strong></td><td>Request, dependency, exception, and performance telemetry for apps.</td></tr>
+<tr><td><strong>Service Health</strong></td><td>Azure incidents, planned maintenance, and advisories for your services.</td></tr>
+<tr><td><strong>Advisor</strong></td><td>Personalised recommendations in five categories.</td></tr>
+<tr><td><strong>Defender for Cloud</strong></td><td>Security posture, secure score, and workload protection across clouds.</td></tr>
+</tbody></table>
+<p><strong>Your resources vs the platform:</strong> Azure Monitor watches what you deployed; Service Health reports what Microsoft is doing.</p>
+<h2>Deployment and tooling</h2>
+<table><thead><tr><th>Tool</th><th>Notes</th></tr></thead><tbody>
+<tr><td><strong>Azure portal</strong></td><td>Web GUI for creating and managing resources.</td></tr>
+<tr><td><strong>Azure CLI</strong></td><td>Cross-platform commands such as <code>az group create</code>.</td></tr>
+<tr><td><strong>Azure PowerShell</strong></td><td>Cmdlets such as <code>New-AzResourceGroup</code> in the Az module.</td></tr>
+<tr><td><strong>Cloud Shell</strong></td><td>Browser terminal with CLI and PowerShell preinstalled and authenticated.</td></tr>
+<tr><td><strong>ARM templates</strong></td><td>Declarative JSON describing the end state; idempotent redeploys.</td></tr>
+<tr><td><strong>Bicep</strong></td><td>Declarative language that compiles to ARM JSON; same engine, cleaner syntax.</td></tr>
+</tbody></table>
+<p><strong>Declarative vs imperative:</strong> a template describes the destination; a script describes the steps. Only the template is naturally idempotent.</p>
+<h2>Compliance, privacy, and agreements</h2>
+<table><thead><tr><th>Item</th><th>What it covers</th></tr></thead><tbody>
+<tr><td><strong>Trust Center</strong></td><td>Published security, privacy, and compliance information and certifications.</td></tr>
+<tr><td><strong>Service Trust Portal</strong></td><td>Audit reports and compliance evidence for customers.</td></tr>
+<tr><td><strong>Privacy Statement</strong></td><td>What personal data Microsoft collects and how it is used and protected.</td></tr>
+<tr><td><strong>Compliance Manager</strong></td><td>Assesses your tenant against ISO 27001, GDPR, and similar standards.</td></tr>
+<tr><td><strong>SLA</strong></td><td>Availability commitment with service credits if missed; not a guarantee of zero downtime.</td></tr>
+<tr><td><strong>Preview features</strong></td><td>May change or be withdrawn and are typically excluded from the standard SLA.</td></tr>
+</tbody></table>
+<h2>Quick decision table</h2>
+<table><thead><tr><th>Requirement</th><th>Choose</th></tr></thead><tbody>
+<tr><td>Estimate a new Azure design</td><td>Pricing calculator</td></tr>
+<tr><td>Justify a migration</td><td>TCO calculator</td></tr>
+<tr><td>See spend by department</td><td>Cost analysis with tags</td></tr>
+<tr><td>Warn before overspending</td><td>Budget with alerts</td></tr>
+<tr><td>Prevent deletion</td><td>CanNotDelete lock</td></tr>
+<tr><td>Prevent any change</td><td>ReadOnly lock</td></tr>
+<tr><td>Block resources outside a region</td><td>Azure Policy (Deny)</td></tr>
+<tr><td>Grant least privilege</td><td>RBAC at the narrowest scope</td></tr>
+<tr><td>Investigate who deleted a resource</td><td>Activity log</td></tr>
+<tr><td>Track app exceptions and latency</td><td>Application Insights</td></tr>
+<tr><td>Learn about an Azure outage</td><td>Service Health</td></tr>
+<tr><td>Reduce cost on idle VMs</td><td>Advisor recommendations</td></tr>
+</tbody></table>
+<footer>AZ-900 cheat sheet 3 of 3 &middot; unofficial study aid &middot; snapshot 2026-11</footer>
+</article>
+
+</main>
+</body>
+</html>
